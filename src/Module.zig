@@ -5828,8 +5828,6 @@ pub fn initNewAnonDecl(
     typed_value: TypedValue,
     name: InternPool.NullTerminatedString,
 ) Allocator.Error!void {
-    assert(typed_value.ty.toIntern() == mod.intern_pool.typeOf(typed_value.val.toIntern()));
-
     const new_decl = mod.declPtr(new_decl_index);
 
     new_decl.name = name;
